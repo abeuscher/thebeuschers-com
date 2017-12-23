@@ -1,0 +1,23 @@
+.small-nav {
+  text-align:right;
+  display:inline-block;
+  ul {
+    display:inline-block;
+    li {
+      a {
+        font-weight:400;
+        font-size:1.2em;
+        padding:.25em 1.5em;
+        line-height:2;
+        display: inline-block;
+      }
+    }
+  }
+}
+ul.hmenu.social-links {
+  margin-left:1.5em;
+  padding:.5em 0;
+  li {
+    padding-left:1em;
+  }
+}

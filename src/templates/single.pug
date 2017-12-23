@@ -1,0 +1,33 @@
+extends inc/page.pug
+block template
+	:php
+		/*
+		Template Name: Blog Entry Page
+		*/
+block content
+	.content
+		:php
+			if( have_posts() ){
+			 while( have_posts() ) {
+				the_post();
+				$start_date = get_the_date();
+			$parent_title = "Blog";
+			$parent_url = "/blog/";
+		include ./inc/breadcrumbs.pug
+		section
+			.container
+				.row
+					.col-md-12
+						h1
+							:php
+								the_title();
+		section.container.blog-content
+			.row
+				.col-md-9
+					article.blog-content
+						:php
+							the_content();
+				.col-md-3.related-posts
+					h2 Right Rail!
+		:php
+			}}
