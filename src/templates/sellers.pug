@@ -1,0 +1,32 @@
+extends inc/page.pug
+block template
+  :php
+    /*
+    Template Name: Sellers Page
+    */
+block content
+  .content.seller
+    section
+      .container
+        .row
+          .col-md-12
+            h1
+              :php
+                the_title();
+    section#main-content
+      .container
+        :php
+          if( have_posts() ): while( have_posts() ): the_post();
+        article.blog-post
+          .blog-post-body
+            :php
+              the_content();
+    section.cta
+      .container
+        .row
+          .col-md-12
+            :php
+              printf("<h2>%s</h2><a class='button knockout cta' href='%s'>%s</a>",get_field("cta_header_text"),get_field("cta_link"),get_field("cta_button_label"));
+        :php
+          endwhile;
+          endif;

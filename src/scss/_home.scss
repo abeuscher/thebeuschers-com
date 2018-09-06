@@ -1,0 +1,11 @@
+.pic {
+  @include  aspect-ratio(1,1);
+  background-repeat: no-repeat;
+  background-size:contain;
+  &.align-right {
+    background-position:right;
+  }
+  &.align-left {
+    background-position:left;
+  }
+}
