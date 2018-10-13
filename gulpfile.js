@@ -140,7 +140,7 @@ gulp.task('build-js', function() {
 gulp.task('build-views', function() {
     gulp.src(viewsSrcDir + '*.pug')
         .pipe(pug({
-            "pretty": true,
+            "pretty": false,
             "filters": {
               "php":pugPhpFilter
             },
