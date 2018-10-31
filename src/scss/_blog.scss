@@ -8,3 +8,25 @@
     padding:0;
   }
 }
+.blog-comments {
+  label {
+    display:block;
+    text-transform: uppercase;
+    font-size:.7em;
+  }
+  .comment-notes {
+    display:none;
+  }
+  .comment {
+    background:$grey;
+    padding:$gutter-width;
+    margin-bottom:$gutter-width;
+    font-size:1.2em;
+    cite {
+      margin-top:$gutter-width/2;
+      display:block;
+      font-style:italic;
+      font-size:.8em;
+    }
+  }
+}
