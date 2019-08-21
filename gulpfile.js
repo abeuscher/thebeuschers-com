@@ -128,19 +128,13 @@ gulp.task('build-js', function() {
     if (!fs.existsSync(jsBuildDir)){
         fs.mkdirSync(jsBuildDir);
     }
-    if (!fs.existsSync(embedBuildDir)){
-        fs.mkdirSync(embedBuildDir);
-    }
-    if (!fs.existsSync(uberembedBuildDir)){
-        fs.mkdirSync(uberembedBuildDir);
-    }
     runSequence('bundle-js', 'uglify-js');
 });
 
 gulp.task('build-views', function() {
     gulp.src(viewsSrcDir + '*.pug')
         .pipe(pug({
-            "pretty": false,
+            "pretty": true,
             "filters": {
               "php":pugPhpFilter
             },

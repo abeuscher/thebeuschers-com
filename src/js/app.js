@@ -23,10 +23,6 @@ activateImages();
 var ctaBar = document.getElementById("cta-bar");
 var buttons = [
   {
-  "label":"Good Faith Negotiations",
-  "url":siteSettings.imagePath+"TheBeuschersGoodFaithNegotiations.pdf"
-  },
-  {
   "label":"Buyer's Guide",
   "url":siteSettings.imagePath+"TheBeuschersBuyersGuide.pdf"
   },
