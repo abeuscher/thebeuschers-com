@@ -1,0 +1,48 @@
+-
+  var menudata = [
+      {
+        label: "Home",
+        url: "/",
+        classname: "home"
+      },
+      {
+        label: "Buyers",
+        url: "/buyers",
+        classname: ""
+      },
+      {
+        label: "Sellers",
+        url: "/sellers",
+        classname: ""
+      },
+      {
+        label: "Vendors",
+        url: "/vendors",
+        classname: ""
+      },
+      {
+        label: "Hoods",
+        url: "/neighborhoods",
+        classname: ""
+      },
+      {
+        label: "Blog",
+        url: "/blog",
+        classname: ""
+      },
+      {
+        label: "Contact",
+        url: "/contact-us",
+        classname: ""
+      }]
+mixin menuitem(item)
+  li
+    a(href=item.url,class=item.classname)=item.label
+    if item.children
+      ul
+        each subitem in item.children
+          +menuitem(subitem)  
+mixin makemenu(data)
+  ul
+    each item in data
+      +menuitem(item)

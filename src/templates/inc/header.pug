@@ -32,7 +32,7 @@ header.main
   section.main-header
     .container
       .row
-        .col-md-4
+        .col-md-3.no-padding
           ul.hmenu.social-links
             li
               a(href='https://www.facebook.com/TheBeuschers/')
@@ -49,18 +49,7 @@ header.main
                 span.fa-1x.fa-stack
                   i.fa.fa-circle.fa-stack-2x
                   i.fa.fa-stack-1x.fa-inverse.fa-instagram
-        .col-md-8.visible-md.visible-lg.right
+        .col-md-9.visible-md.visible-lg.right.no-padding
           nav.small-nav
             ul.hmenu
-              li
-                a(href="/") Home
-              li
-                a(href="buyers") Buyers
-              li
-                a(href="sellers") Sellers
-              li
-                a(href="Vendors") Vendors
-              li
-                a(href="blog") Blog
-              li
-                a(href="contact") Contact
+              +makemenu(menudata)
