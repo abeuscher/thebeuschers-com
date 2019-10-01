@@ -6,6 +6,9 @@ var isElement = require("./utils/is-element.js");
 
 var siteSettings = {
   "imagePath": "/wp-content/themes/thebeuschers/images/",
+  "templates" : {
+    "ctaBar" : require("./inc/cta-bar.pug")
+  },
   "breakpoints": {
     "xs": 0,
     "s": 641,
@@ -17,10 +20,20 @@ var siteSettings = {
 
 window.addEventListener("load", function() {
 activateImages();
+var ctaBar = document.getElementById("cta-bar");
+ctaBar.appendChild(parseHTML(siteSettings.templates.ctaBar()));
 });
 
 function activateImages() {
   var backgroundImages = document.querySelectorAll("[data-bg]");
+  var backgroundObjects = document.querySelectorAll("[data-bg-object]");
+  for (i in backgroundObjects) {
+    if (isElement(backgroundObjects[i])) {
+      thisElement = backgroundObjects[i];
+      var imageObj = JSON.parse(thisElement.getAttribute("data-bg-object"));
+      thisElement.style.backgroundImage = "url('" + imageObj.url + "')";
+    }
+  }
   for (i in backgroundImages) {
     if (isElement(backgroundImages[i])) {
       thisElement = backgroundImages[i];

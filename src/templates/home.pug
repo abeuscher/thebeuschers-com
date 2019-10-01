@@ -5,59 +5,39 @@ block template
     Template Name: Home Page
     */
 block content
-  article.content
+  :php
+    
+  article.content.home
     section.marquee(data-bg="pic-needle.jpg")
       .container
         .row
           .col-md-6
           .col-md-6
-            h1 The Beuschers 
-              br
-              | Real Estate
-            h2 We want to help you make yourself at home. 
-              br
-              | Or something.
-            a.button.cta.main(href="contact") Make an Appointment
-    section.home-about
-      .container
-        .row
-          .col-md-6
-            h2 Johnny & Barbara Beuscher
-            h3 Brokers
-            p As Windermere agents we work with a complex set of experts and specialists that cover all aspects of real estate making the process as smooth and enjoyable as possible.
-            p Barbara and Johnny bring different skill sets to the table. We are constantly working, constantly on duty, always on call. Real Estate is more than buying and selling houses. It’s customer service. It’s helping people find a home. 
-            p
-              strong Seattle has become part of our soul. Once you’re here you never want to leave.
-            a.button.knockout(href="contact") Contact Us
-          .col-md-6
-            .pic.align-right(data-bg="johnandbarbara.jpg")
-    section.home-tips.knockout
-      .container
-        .row
-          .col-md-6
-            .pic.align-right(data-bg="keyhand.jpg")
-          .col-md-6
-            h2 Buying & Selling Tips
-            p Whether you're in the market to buy or sell, we are committed to supporting your real estate needs through every step of the process.
-            a.button(href="#") Find Out More
-    section.home-other
-      .container
-        .row
-          .col-md-12
-            h2 Some other shit we felt like saying
-          .col-md-6
-            p
-              strong It has been said that Seattle is a patchwork of unique neighborhoods and those create unique micro-markets.  Our mission is to maintain a keen sense of Seattle’s diverse communities even as they evolve, and therefore we’re always  prepared to introduce anyone to the perfect home or the perfect buyer.
-            p 10 years  ago we were In the restaurant business in the Hamptons.  Then we moved to Seattle and we never looked back.  It was said once that great cuisine is just a long series of menial kitchen chores.  Real Estate is much the same.  People go to a closing and they do not see all the intricate steps and hard work that lead to that important day when you either get the keys to your new home or the check from the proceeds of the sale.   
-          .col-md-6
-            ul
-              li
-                p We have been together for 26 years.
-              li
-                p Johnny has a BFA from Bard College and spent 25 years on stage in NYC.
-              li
-                p Barbara worked production for  builders and architects  like  Maziar Behrooz & Peter  Marino which led to a desire to enter the Real Estate market.
-              li
-                p Barbara is an accomplished equestrian.
-              li
-                p Our son is a principal in a political management firm in Seattle and is also happily married.
+            h1
+              :php
+                echo get_field("page_headline");
+            h2
+              :php
+                echo get_field("page_tagline");
+            :php
+              echo "<a class='button cta main' href='".get_field("main_button_target")."'>".get_field("main_button_label")."</a>";
+    :php
+      foreach(get_field("sections") as $key=>$section) {
+        echo "<section class='".$section["background_color"]."'>";
+    .container
+      .row
+        :php
+          $headers = $section["section_headline"] != "" ? "<h2>".$section["section_headline"]."</h2>" : "";
+          $headers = $section["section_subhead"] != "" ? $headers."<h3>".$section["section_subhead"]."</h3>" : $headers; 
+          $cta = $section["section_button_label"] ? "<a class='button' href='".$section["section_button_target"]."'>".$section["section_button_label"]."</a>" : "";
+          if ($section["section_picture"]) {
+            $picrow = "<div class='col-md-6'><div class='pic align-".$section["section_picture_orientation"]."' data-bg-object='".json_encode($section["section_picture"], JSON_UNESCAPED_SLASHES)."'></div></div>";
+            $textrow = "<div class='col-md-6'>".$headers.$section["section_content"].$cta."</div>";
+            echo $section["section_picture_orientation"]=="left" ? $picrow.$textrow : $textrow.$picrow;
+          }
+          else {
+            echo "<div class='col-md-12'>".$headers.$section["section_content"].$cta."</div>";
+          }
+    :php
+      echo "</section>";
+      }

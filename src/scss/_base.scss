@@ -42,6 +42,14 @@ a.button, button, .button {
   &.cta {
     margin-top:1em;
   }
+  &.bottom-cta {
+    padding:.25em .5em;
+    font-size:.9em;
+    margin:0 .5em;
+    &:last-child {
+      margin-right:0;
+    }
+  }
   &:hover {
     border-color:$light-blue;
     background: $light-blue;
@@ -67,24 +75,88 @@ a.button, button, .button {
   }
 }
 .content {
+  padding:4em 0;
+  &.home {
+    padding-top:0;
+  }
   &.blog {
     .container {
       padding-top:0;
       padding-bottom:0;
     }
   }
+  &.seller {
+    padding-bottom:0;
+  }
   section {
-    &.knockout {
+    &.purple {
       background:lighten($light-blue,15%);
       color:$white;
     }
     .container{
-      padding-top:4em;
-      padding-bottom:4em;
       p {
         font-size:1.2em;
         line-height:1.5;
       }
     }
   }
+}
+.caption {
+  p {
+    font-size:.8em;
+    line-height:1;
+    margin:0;
+    padding:0;
+    text-align: center;
+    font-style:italic;
+  }
+}
+ol.buying-tips {
+  list-style:none;
+  counter-reset: my-badass-counter;
+  li {
+    position:relative;
+    padding-bottom:$gutter-width;
+    &:before {
+      content: counter(my-badass-counter);
+    	counter-increment: my-badass-counter;
+      font-size:2em;
+      font-weight:600;
+      position:absolute;
+      background:darken($grey,20%);
+      color:$white;
+      left:-1.25em;
+      padding:0 .2em;
+    }
+  }
+  h1 {
+    color:darken($grey,20%);
+  }
+}
+section.cta {
+  background:$blue;
+  color:$white;
+  padding:$gutter-width 0;
+  text-align: center;
+  &.seller {
+
+  }
+}
+.vendor-tile {
+  display:inline-block;
+  width:50%;
+  margin:0 -3px $gutter-width*2;
+  text-align:center;
+  .button {
+    margin-right:1em;
+    &:last-child {
+      margin-right:0;
+    }
+    .fa {
+      padding-right:.25em;
+    }
+  }
+}
+.vendor h2 {
+  text-align: center;
 }

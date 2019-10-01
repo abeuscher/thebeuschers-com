@@ -9,7 +9,7 @@ html
     meta(property="og:locale",content="en_US")
     meta(property="og:site_name",content="The Beuschers Real Estate")
     meta(property="twitter:site",content="thebeuschers.com")
-    link(rel="stylesheet",href="https://fonts.googleapis.com/css?family=Lato|Merriweather")
+    link(rel="stylesheet",href="https://fonts.googleapis.com/css?family=Lato")
     link(rel='shortcut icon', href=themeDir + 'images/favicon.ico')
     :php
       global $wp_query;
@@ -38,4 +38,5 @@ html
         include ./header.pug
         block content
         include ./footer.pug
+        #cta-bar
       script(src=themeDir+"js/bundle.js")
