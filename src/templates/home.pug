@@ -21,7 +21,7 @@ block content
               echo "<a class='button cta main' href='".get_field("main_button_target")."'>".get_field("main_button_label")."</a>";
     :php
       foreach(get_field("sections") as $key=>$section) {
-        echo "<section class='".$section["background_color"]."'>";
+        echo "<section class='".$section["background_color"]." padding-top'>";
     .container
       .row
         :php

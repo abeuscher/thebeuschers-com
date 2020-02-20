@@ -16,6 +16,9 @@ ul.hmenu {
 .right {
   text-align:right;
 }
+.padding-top {
+  padding-top:$gutter-width;
+}
 body {
   h1,h2,h3,h4 {
     font-family: $header-font;
@@ -69,9 +72,10 @@ a.button, button, .button {
   background-size: cover;
   background-repeat: no-repeat;
   color:$white;
-  background-position: bottom center;
+  background-position: top center;
   .container {
     padding-top:5em;
+    text-align:center;
   }
 }
 .content {

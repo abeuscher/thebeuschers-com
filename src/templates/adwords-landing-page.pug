@@ -1,0 +1,16 @@
+extends inc/landing-page.pug
+block template
+  :php
+    /*
+    Template Name: Adwords Landing Page Feb 2020
+    */
+block content
+  section.container
+    .row
+      .col-md-8.col-md-offset-2
+        h1
+            :php
+                echo get_the_title();
+        .content
+            :php
+                the_content();

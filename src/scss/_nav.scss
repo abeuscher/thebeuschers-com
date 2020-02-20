@@ -15,13 +15,12 @@
   ul {
     display:inline-block;
     margin:0;
-    padding:0;
+    padding:.25em 0;
     li {
       a {
         font-weight:400;
         font-size:1em;
-        padding:.25em 1.5em;
-        line-height:2;
+        padding:.25em 0 0 2.5em;
         display: inline-block;
       }
     }

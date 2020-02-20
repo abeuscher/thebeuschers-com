@@ -6,33 +6,29 @@ header.main
             #logo-facepic
             img(src=themeDir+"images/windmere-logo.png")    
         .col-md-3.visible-md.visible-lg
-          h2 John Beuscher
-          ul.hmenu.first
-            li
-              a(href='tel:1-206-409-2244')
-                span.fa-1x.fa-stack
-                  i.fa.fa-circle.fa-stack-2x
-                  i.fa.fa-stack-1x.fa-inverse.fa-phone
-                span 1-206-409-2244
-            li
-              a(href='mailto:thebeuschers@windermere.com')
-                span.fa-1x.fa-stack
-                  i.fa.fa-circle.fa-stack-2x
-                  i.fa.fa-stack-1x.fa-inverse.fa-envelope
-                span thebeuschers@windermere.com
-        .col-md-3.visible-md.visible-lg
           h2 Barbara Beuscher
-          ul.hmenu
-            li
-              a(href='tel:1-206-409-2244')
-                span.fa-1x.fa-stack
-                  i.fa.fa-circle.fa-stack-2x
-                  i.fa.fa-stack-1x.fa-inverse.fa-phone
-                span 1-206-409-2243
+          a(href='tel:1-206-409-2244')
+            span.fa-1x.fa-stack
+              i.fa.fa-circle.fa-stack-2x
+              i.fa.fa-stack-1x.fa-inverse.fa-phone
+            span 1-206-409-2243            
+        .col-md-3.visible-md.visible-lg
+          h2 John Beuscher
+          a(href='tel:1-206-409-2244')
+            span.fa-1x.fa-stack
+              i.fa.fa-circle.fa-stack-2x
+              i.fa.fa-stack-1x.fa-inverse.fa-phone
+            span 1-206-409-2244
+          br
+          a(href='mailto:thebeuschers@windermere.com')
+            span.fa-1x.fa-stack
+              i.fa.fa-circle.fa-stack-2x
+              i.fa.fa-stack-1x.fa-inverse.fa-envelope
+            span.email thebeuschers@windermere.com
   section.main-header
     .container
       .row
-        .col-md-3.no-padding
+        .col-md-6.no-padding
           ul.hmenu.social-links
             li
               a(href='https://www.facebook.com/TheBeuschers/')
@@ -49,7 +45,7 @@ header.main
                 span.fa-1x.fa-stack
                   i.fa.fa-circle.fa-stack-2x
                   i.fa.fa-stack-1x.fa-inverse.fa-instagram
-        .col-md-9.visible-md.visible-lg.right.no-padding
+        .col-md-6.visible-md.visible-lg.right.no-padding
           nav.small-nav
             ul.hmenu
               +makemenu(menudata)
