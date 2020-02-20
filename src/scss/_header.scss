@@ -18,7 +18,21 @@ header.main {
       margin-right:.25em;
       color:$light-blue;
     }
+    ul.first li {
+      display:block;
+    }
     .logo {
+      #logo-facepic {
+        display:none;
+        @include bp(s) {
+          background:url("/wp-content/themes/thebeuschers/images/header-image.jpg") no-repeat center;
+          background-size:cover;
+          @include aspect-ratio(1,1);
+          width:150px;
+          vertical-align: middle;
+          display:inline-block;
+        }
+      }
       .headpic {
         background-size:cover;
         height:8em;

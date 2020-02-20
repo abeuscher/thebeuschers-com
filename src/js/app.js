@@ -1,6 +1,3 @@
-require("dom4");
-require("fetch-ie8");
-
 var parseHTML = require("./utils/parse-html.js");
 var isElement = require("./utils/is-element.js");
 
@@ -21,7 +18,17 @@ var siteSettings = {
 window.addEventListener("load", function() {
 activateImages();
 var ctaBar = document.getElementById("cta-bar");
-ctaBar.appendChild(parseHTML(siteSettings.templates.ctaBar()));
+var buttons = [
+  {
+  "label":"Buyer's Guide",
+  "url":siteSettings.imagePath+"TheBeuschersBuyersGuide.pdf"
+  },
+  {
+  "label":"Seller's Guide",
+  "url":siteSettings.imagePath+"TheBeuschersSellersGuide.pdf"
+  }
+];
+ctaBar.appendChild(parseHTML(siteSettings.templates.ctaBar(buttons)));
 });
 
 function activateImages() {
