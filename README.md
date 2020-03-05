@@ -1,5 +1,5 @@
 ## thebeuschers.com - site theme
-# v 0.01
+# v 1.2
 
 This is a Wordpress theme.
 
