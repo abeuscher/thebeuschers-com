@@ -21,12 +21,6 @@ block content
           .blog-post-body
             :php
               the_content();
-    section.cta
-      .container
-        .row
-          .col-md-12
-            :php
-              printf("<h2>%s</h2><a class='button knockout cta' href='%s'>%s</a>",get_field("cta_header_text"),get_field("cta_link"),get_field("cta_button_label"));
         :php
           endwhile;
           endif;
