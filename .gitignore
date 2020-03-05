@@ -8,3 +8,4 @@ yarn.lock
 data
 .env
 !/.en
+yarn-error.log
