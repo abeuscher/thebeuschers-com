@@ -97,8 +97,8 @@ a.button, button, .button {
       background:lighten($light-blue,15%);
       color:$white;
     }
-    .container{
-      p {
+    .container {
+      p, li, .usercontent {
         font-size:1.2em;
         line-height:1.5;
       }
