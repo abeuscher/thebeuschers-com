@@ -6,3 +6,5 @@ public_html
 .DS_Store
 yarn.lock
 data
+.env
+!/.env
