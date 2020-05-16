@@ -2,7 +2,7 @@ extends inc/landing-page.pug
 block template
   :php
     /*
-    Template Name: Adwords Landing Page Feb 2020
+    Template Name: Landing Page April 2020
     */
 block content
   .landing-page
@@ -11,11 +11,10 @@ block content
         a.logo(href='https://withwre.com/thebeuschers/listings/my-office-s-listings')
           #logo-facepic
           img(src='/wp-content/themes/thebeuschers/images/windmere-logo.png')
-        h1 Make yourself at home.
-        p Or something like that. Look - we don't think it's the 
-          em best 
-          | slogan in the world, but we're not an ad agency.
-        p We just have some great homes around Seattle to sell. If you're looking for one,
+        :php
+            printf("<h1>%s</h1>",get_field("page_header"));
+            printf("<h2>%s</h2>",get_field("page_subhead"));       
+            printf("<div class='lp-wysiwyg-content'>%s</div>",get_field("page_content")); 
       a.lp-button.cta(href="https://withwre.com/thebeuschers/listings/my-office-s-listings") Check Out Our Listings
     article
       .inner.fixed-lg

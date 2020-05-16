@@ -26,6 +26,13 @@ function siteSettings() {
         buildDir: jsBuildDir,
         buildFileName: "bundle.js"
       },
+      {
+        name: "Embed Bundle",
+        srcDir: jsSrcDir,
+        srcFileName: "embed-nav.js",
+        buildDir: jsBuildDir,
+        buildFileName: "embed.js"
+      },
     ],
     templates: [
       {

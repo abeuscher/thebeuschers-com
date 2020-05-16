@@ -57,7 +57,11 @@ $button-text-hover-color:#00a8cc;
     }
   }
   header {
-    padding: 75px 0;
+    padding:0 0 75px;
+    @include bp(s) {
+      padding: 75px 0;
+    }
+   
     background: $header-bg-color;
     text-align: center;
     color: $header-text-color;
@@ -85,7 +89,8 @@ $button-text-hover-color:#00a8cc;
     margin: 0 auto;
     padding: 0;
     max-width: 404px;
-    width: 90%;
+    width: 100%;
+    height:auto;
     background: white;
     #logo-facepic {
       flex-basis: 37.5%;
@@ -95,6 +100,7 @@ $button-text-hover-color:#00a8cc;
     }
     img {
       width: 62.5%;
+      height:auto;
     }
   }
 }

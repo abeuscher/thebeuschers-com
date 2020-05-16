@@ -2,22 +2,22 @@
   var menudata = [
       {
         label: "Home",
-        url: "/",
+        url: locals.siteurl,
         classname: "home"
       },
       {
         label: "Buyers",
-        url: "/buyers",
+        url: locals.siteurl+"buyers",
         classname: ""
       },
       {
         label: "Sellers",
-        url: "/sellers",
+        url: locals.siteurl+"sellers",
         classname: ""
       },
       {
         label: "Vendors",
-        url: "/vendors",
+        url: locals.siteurl+"vendors",
         classname: ""
       },
       {
@@ -27,7 +27,7 @@
       },
       {
         label: "Contact",
-        url: "/contact-us",
+        url: locals.siteurl+"contact-us",
         classname: ""
       }]
 mixin menuitem(item)
