@@ -24,8 +24,9 @@ block content
                         .swiper-pagination
                         .swiper-button-prev
                         .swiper-button-next
-    .container.content
+    .container
         .row
             .col-md-12
-                :php
-                    the_content();
+                .content
+                    :php
+                        the_content();
