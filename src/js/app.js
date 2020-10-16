@@ -1,10 +1,14 @@
 var parseHTML = require("./utils/parse-html.js");
 var isElement = require("./utils/is-element.js");
 
+const {Swiper,Navigation,Pagination} = require("swiper");
+
+Swiper.use([Navigation, Pagination]);
+
 var siteSettings = {
   "imagePath": "/wp-content/themes/thebeuschers/images/",
-  "templates" : {
-    "ctaBar" : require("./inc/cta-bar.pug")
+  "templates": {
+    "ctaBar": require("./inc/cta-bar.pug")
   },
   "breakpoints": {
     "xs": 0,
@@ -15,21 +19,43 @@ var siteSettings = {
   }
 }
 
-window.addEventListener("load", function() {
-activateImages();
-var ctaBar = document.getElementById("cta-bar");
-var buttons = [
-  {
-  "label":"Buyer's Guide",
-  "url":siteSettings.imagePath+"TheBeuschersBuyersGuide.pdf"
-  },
-  {
-  "label":"Seller's Guide",
-  "url":siteSettings.imagePath+"TheBeuschersSellersGuide.pdf"
-  }
-];
-ctaBar.appendChild(parseHTML(siteSettings.templates.ctaBar(buttons)));
+window.addEventListener("load", function () {
+  activateImages();
+  activateCarousels();
+  var ctaBar = document.getElementById("cta-bar");
+  var buttons = [
+    {
+      "label": "Buyer's Guide",
+      "url": siteSettings.imagePath + "TheBeuschersBuyersGuide.pdf"
+    },
+    {
+      "label": "Seller's Guide",
+      "url": siteSettings.imagePath + "TheBeuschersSellersGuide.pdf"
+    }
+  ];
+  ctaBar.appendChild(parseHTML(siteSettings.templates.ctaBar(buttons)));
 });
+
+function activateCarousels() {
+  let currentCarousels = [];
+  let carousels = document.querySelectorAll(".carousel");
+  carousels.forEach((carousel,idx) => {
+    currentCarousels[idx] = new Swiper(carousel, {
+      autoplay: {
+        delay: 5000,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable:true
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  })
+}
 
 function activateImages() {
   var backgroundImages = document.querySelectorAll("[data-bg]");

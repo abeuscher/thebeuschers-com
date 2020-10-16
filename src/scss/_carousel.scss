@@ -1,0 +1,56 @@
+.carousel-title {
+    background: $black;
+    color: $white;
+    text-align: center;
+}
+
+.carousel-wrapper {
+    background: $black;
+        .swiper-pagination-bullet {
+            background:$white;
+        }    
+    .swiper-wrapper {
+        padding-bottom: 3em;
+
+    }
+    .swiper-slide {
+        background-size: contain;
+        background-position: center top;
+        background-repeat: no-repeat;
+        position: relative;
+        &:after {
+            content: "";
+            display: block;
+            padding-bottom: 56.25%;
+        }
+        .photo-caption {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.7);
+            opacity: 0;
+            display: none;
+            @include nice-transition();
+            p {
+                color: $white;
+                text-align: center;
+                font-size: 14px;
+                line-height: 1.4;
+                font-style: normal;
+            }
+            @include bp(m) {
+                display: block;
+                p {
+                    font-size: 20px;
+                    line-height: 2;
+                }
+            }
+        }
+        &:hover {
+            .photo-caption {
+                opacity: 1;
+            }
+        }
+    }
+}

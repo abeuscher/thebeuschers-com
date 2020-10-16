@@ -1,7 +1,9 @@
 @import "./_variables.scss";
 $mq-support:true;
 
-
+@mixin nice-transition() {
+  transition: 0.4s cubic-bezier(0.335, 0.815, 0.47, 1);
+}
 @mixin bp($bp, $clamp: false, $prop: "min-width") {
 	$queries: ();
 	@each $bp-name, $bp-value in $bps {
