@@ -12,12 +12,12 @@
 
 .carousel-wrapper {
     background: $black;
+    
         .swiper-pagination-bullet {
             background:$white;
         }    
     .swiper-wrapper {
         padding-bottom: 3em;
-
     }
     .swiper-button-prev, .swiper-button-next {
         color:$white;
@@ -33,7 +33,7 @@
         background-position: center top;
         background-repeat: no-repeat;
         position: relative;
-        margin-bottom:50px;
+        margin:0 auto 50px;
         &:after {
             content: "";
             display: block;
