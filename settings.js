@@ -1,53 +1,27 @@
-var srcDir = "./src/";
-var buildDir = "./public_html/wp-content/themes/thebeuschers/";
+const pugPhpFilter = require("pug-php-filter");
 
-var jsSrcDir = srcDir + "js/";
-var jsBuildDir = buildDir + "js/";
-
-var sassSrcDir = srcDir + "scss/";
-var sassBuildDir = buildDir;
-
-var assetsSrcDir = srcDir + "public_transfer/";
-var assetsBuildDir = buildDir;
-
-var templateSrcDir = srcDir + "templates/";
-var templateBuildDir = buildDir;
-
-
-function siteSettings() {
+const settings = () => {
   return {
-    siteName: "weedreviews.com",
-    directories:[buildDir, jsBuildDir],
-    jsFiles: [
-      {
-        name: "Main Bundle",
-        srcDir: jsSrcDir,
-        srcFileName: "app.js",
-        buildDir: jsBuildDir,
-        buildFileName: "bundle.js"
+    sitename: "",
+    templatesSrc: "./src/templates/",
+    templatesWrite: "./public/",
+    jsSrc: "./src/js/app.js",
+    jsWrite: "./public/js/app.js",
+    scssSrc: "./src/scss/style.scss",
+    scssWrite: "./public/style.css",
+    assetSrc: "./src/public_transfer/",
+    assetWrite: "./public/",
+    pugSettings: {
+      pretty: false,
+      filters: {
+        php: pugPhpFilter,
       },
-    ],
-    templates: [
-      {
-        name: "Main Template Group",
-        srcDir: templateSrcDir,
-        buildDir: templateBuildDir
+      extension: "php",
+      locals: {
+        siteurl: "",
       },
-    ],
-    stylesheets: [
-      {
-        name: "Main Stylesheet",
-        srcDir: sassSrcDir,
-        buildDir: sassBuildDir
-      },
-    ],
-    assets: [
-      {
-        name: "Main Public Assets",
-        srcDir: [assetsSrcDir + "**/*"],
-        buildDir: assetsBuildDir
-      }
-    ]
+    },
   };
-}
-module.exports = siteSettings;
+};
+
+module.exports = settings;
