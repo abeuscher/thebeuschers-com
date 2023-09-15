@@ -1,11 +1,7 @@
-var parseHTML = require("./utils/parse-html.js");
 var isElement = require("./utils/is-element.js");
 
 var siteSettings = {
   "imagePath": "/wp-content/themes/thebeuschers/images/",
-  "templates" : {
-    "ctaBar" : require("./inc/cta-bar.pug")
-  },
   "breakpoints": {
     "xs": 0,
     "s": 641,
@@ -17,18 +13,6 @@ var siteSettings = {
 
 window.addEventListener("load", function() {
 activateImages();
-var ctaBar = document.getElementById("cta-bar");
-var buttons = [
-  {
-  "label":"Buyer's Guide",
-  "url":siteSettings.imagePath+"TheBeuschersBuyersGuide.pdf"
-  },
-  {
-  "label":"Seller's Guide",
-  "url":siteSettings.imagePath+"TheBeuschersSellersGuide.pdf"
-  }
-];
-ctaBar.appendChild(parseHTML(siteSettings.templates.ctaBar(buttons)));
 });
 
 function activateImages() {
